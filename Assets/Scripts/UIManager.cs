@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 	public GameManager GM;
 
 	public GameObject startImage;
 	public Image pauseImage, playImage;
-	public Text timeText;
+	public Text timeText, altitudeText;
 	public Transform cameraTarget;
 
 	Color imageTargetColor = Color.white;
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour {
 	void Update()
 	{
 		timeText.text = FormatTime(GM.timeValue);
+		altitudeText.text = (Camera.main.transform.position.y - GM.transform.position.y).ToString("F1") + " m";
 		if(!clickedOnStartImage){
 			ChangeImageColor(startImage.GetComponent<Image>(), imageTargetColor);
 		}else{
@@ -60,6 +62,9 @@ public class UIManager : MonoBehaviour {
 	}
 	public void ChangeImageColor(Image i, Color c){
 		i.color = Color.LerpUnclamped(i.color, c, 0.1f);
+	}
+	public void LoadMainLevel(){
+		SceneManager.LoadScene(1);
 	}
 	public void QuitButton(){
 		GM.QuitGame();

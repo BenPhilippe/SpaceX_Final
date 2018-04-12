@@ -35,6 +35,10 @@ public class FalconHeavy : MonoBehaviour {
 		foreach(SpeedManager s in GetComponentsInChildren<SpeedManager>()){
 			s.enabled = !b;
 		}
+
+		foreach(ParticleSystem ps in GetComponentsInChildren<ParticleSystem>()){
+			ps.enableEmission = !b;
+		}
 		bzWalker.enabled = !b;
 		speedManager.enabled = !b;
 	}

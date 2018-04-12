@@ -57,8 +57,8 @@ Material:
     m_Colors:
     - _Bright: {r: 0.25735292, g: 0.14449346, b: 0.08326123, a: 1}
     - _Darkness: {r: 0.5514706, g: 0.6102433, b: 1, a: 1}
-    - _GroundCloseColor: {r: 0.6391832, g: 0.7450632, b: 0.99996114, a: 1}
-    - _GroundFarColor: {r: 0.35685438, g: 0.43920746, b: 0.69018805, a: 1}
+    - _GroundCloseColor: {r: 0, g: 0.058123883, b: 0.23249553, a: 1}
+    - _GroundFarColor: {r: 0.18757333, g: 0.27294928, b: 0.52695274, a: 1}
     - _PenumbraColor: {r: 1, g: 0, b: 0, a: 1}
     - _SunCol: {r: 1, g: 1, b: 1, a: 1}
     - _SunColor: {r: 1, g: 0.09019608, b: 0, a: 1}

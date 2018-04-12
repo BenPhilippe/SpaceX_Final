@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
 	{
 		if(isPlayMode){
 			timeValue += Time.deltaTime * timeMultiplier;
+
 			if(timeValue>0){
 				currentPhase = "Decollage";
 				falcon.PauseWalkers(false);
@@ -38,6 +39,16 @@ public class GameManager : MonoBehaviour {
 
 	public void EnablePlayMode(bool b){
 		isPlayMode = b;
+		Object[] objects = FindObjectsOfType(typeof(ParticleSystem));		
+		foreach (UnityEngine.Object o in objects)
+		{
+			ParticleSystem sys = (ParticleSystem)o;
+			if(!isPlayMode){
+				sys.Pause(true);
+			}else{
+				sys.Play(true);
+			}
+		}
 	}
 
 	public void ChangeTimeSpeed(float value){

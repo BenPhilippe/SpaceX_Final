@@ -26,7 +26,7 @@ public class FloatingOrigin : MonoBehaviour
     void LateUpdate()
     {
         Vector3 cameraPosition = gameObject.transform.position;
-        //cameraPosition.y = 0f;
+        cameraPosition = Vector3.zero;
         if (cameraPosition.magnitude > threshold)
         {
             Object[] objects = FindObjectsOfType(typeof(Transform));
