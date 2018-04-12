@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour {
 
 	public Image pauseImage, playImage;
 	public Text timeText;
+	public Transform cameraTarget;
 
 	void Start()
 	{
@@ -30,7 +31,9 @@ public class UIManager : MonoBehaviour {
 		s += string.Format("{0:00}:{1:00}:{2:00}", min, sec, ct);
 		return s;
 	}
-
+	public void ChangeCurrentTarget(Transform t){
+		cameraTarget.GetComponent<TargetFollower>().ChangeTarget(t);
+	}
 	public void PauseButton(){
 		GM.EnablePlayMode(!GM.isPlayMode);
 		ChangePauseButtonTexture(GM.isPlayMode);
