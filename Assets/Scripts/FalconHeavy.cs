@@ -9,6 +9,7 @@ public class FalconHeavy : MonoBehaviour {
 	//public GameObject secondStage;
 	public GameObject booster_test;
 	public BezierWalkerWithSpeed bzWalker;
+	public SpeedManager speedManager;
 
 	// Use this for initialization
 	void Start () {
@@ -20,10 +21,21 @@ public class FalconHeavy : MonoBehaviour {
 		
 	}
 
+	public void InvertDirection(){
+		foreach(BezierWalkerWithSpeed w in GetComponentsInChildren<BezierWalkerWithSpeed>()){
+			w.isGoingForward = !w.isGoingForward;
+		}
+		bzWalker.isGoingForward = !bzWalker.isGoingForward;
+	}
+
 	public void PauseWalkers(bool b){
 		foreach(BezierWalkerWithSpeed w in GetComponentsInChildren<BezierWalkerWithSpeed>()){
 			w.enabled = !b;
 		}
+		foreach(SpeedManager s in GetComponentsInChildren<SpeedManager>()){
+			s.enabled = !b;
+		}
 		bzWalker.enabled = !b;
+		speedManager.enabled = !b;
 	}
 }

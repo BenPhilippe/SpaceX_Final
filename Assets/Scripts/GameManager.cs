@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public bool isPlayMode;
-	public bool isRewinding;
 	public float timeValue, minTimeValue, maxTimeValue, timeMultiplier;
 	public FalconHeavy falcon;
 	public string currentPhase = "";
+	public float completionPercentage;
 
 	void Start()
 	{
@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 		WebGLInput.captureAllKeyboardInput = false;
 		#endif
 		timeValue = minTimeValue;
+		completionPercentage = 0;
 	}
 	void Update()
 	{
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour {
 		}else{
 			falcon.PauseWalkers(true);
 		}
-		
+		completionPercentage = falcon.bzWalker.NormalizedT * 100;
 	}
 
 	public void EnablePlayMode(bool b){
