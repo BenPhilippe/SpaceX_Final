@@ -32,9 +32,11 @@ public class TargetFollower : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 		if(target){
+			bool zooming = true;
             if(Input.GetMouseButton(2) && !EventSystem.current.IsPointerOverGameObject()){
                 x += Input.GetAxis("Mouse X") * xSpeed;
                 y -= Input.GetAxis("Mouse Y") * ySpeed;
+				zooming = false;
             }
  
             y = ClampAngle(y, yMinLimit, yMaxLimit);
@@ -45,9 +47,11 @@ public class TargetFollower : MonoBehaviour {
  
             Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
             Vector3 position = rotation * negDistance + target.position;
- 
+			if(zooming){
+				Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, position, 1.5f );
+			}
             transform.rotation = rotation;
-			transform.position = Vector3.MoveTowards(position, target.position, followSpeed);
+			transform.position = Vector3.MoveTowards(transform.position, target.position, followSpeed);
 
 		}
 	}

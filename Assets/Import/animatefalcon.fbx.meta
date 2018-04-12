@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 3ad11f772179fad40bf70a4208f7ba64
+timeCreated: 1523542461
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: "fus\xE9eDroite"
+    100004: "fus\xE9eGauche"
+    100006: "fus\xE9eMid"
+    100008: "fus\xE9eTop"
+    100010: "partie_d\xE9tachable"
+    100012: "pied1_fus\xE9eGauche"
+    100014: "pied1_fus\xE9eGauche.001"
+    100016: "pied1_fus\xE9eGauche.002"
+    100018: "pied2_fus\xE9eGauche"
+    100020: "pied2_fus\xE9eGauche.001"
+    100022: "pied2_fus\xE9eGauche.002"
+    100024: "pied3_fus\xE9eGauche"
+    100026: "pied3_fus\xE9eGauche.001"
+    100028: "pied3_fus\xE9eGauche.002"
+    100030: "pied4_fus\xE9eGauche"
+    100032: "pied4_fus\xE9eGauche.001"
+    100034: "pied4_fus\xE9eGauche.002"
+    100036: "piston1_fus\xE9eDroite"
+    100038: "piston1_fus\xE9eGauche"
+    100040: "piston1_fus\xE9eMid"
+    100042: "piston2_fus\xE9eDroite"
+    100044: "piston2_fus\xE9eGauche"
+    100046: "piston2_fus\xE9eMid"
+    100048: "piston3_fus\xE9eDroite"
+    100050: "piston3_fus\xE9eGauche"
+    100052: "piston3_fus\xE9eMid"
+    100054: "piston4_fus\xE9eDroite"
+    100056: "piston4_fus\xE9eGauche"
+    100058: "piston4_fus\xE9eMid"
+    400000: //RootNode
+    400002: "fus\xE9eDroite"
+    400004: "fus\xE9eGauche"
+    400006: "fus\xE9eMid"
+    400008: "fus\xE9eTop"
+    400010: "partie_d\xE9tachable"
+    400012: "pied1_fus\xE9eGauche"
+    400014: "pied1_fus\xE9eGauche.001"
+    400016: "pied1_fus\xE9eGauche.002"
+    400018: "pied2_fus\xE9eGauche"
+    400020: "pied2_fus\xE9eGauche.001"
+    400022: "pied2_fus\xE9eGauche.002"
+    400024: "pied3_fus\xE9eGauche"
+    400026: "pied3_fus\xE9eGauche.001"
+    400028: "pied3_fus\xE9eGauche.002"
+    400030: "pied4_fus\xE9eGauche"
+    400032: "pied4_fus\xE9eGauche.001"
+    400034: "pied4_fus\xE9eGauche.002"
+    400036: "piston1_fus\xE9eDroite"
+    400038: "piston1_fus\xE9eGauche"
+    400040: "piston1_fus\xE9eMid"
+    400042: "piston2_fus\xE9eDroite"
+    400044: "piston2_fus\xE9eGauche"
+    400046: "piston2_fus\xE9eMid"
+    400048: "piston3_fus\xE9eDroite"
+    400050: "piston3_fus\xE9eGauche"
+    400052: "piston3_fus\xE9eMid"
+    400054: "piston4_fus\xE9eDroite"
+    400056: "piston4_fus\xE9eGauche"
+    400058: "piston4_fus\xE9eMid"
+    2100000: platic
+    2100002: metal
+    2100004: whitemetal
+    2100006: panels
+    2100008: blackmetal
+    2100010: reactormetal
+    2100012: reactorBase
+    2100014: TuyauReactor
+    2300000: "fus\xE9eDroite"
+    2300002: "fus\xE9eGauche"
+    2300004: "fus\xE9eMid"
+    2300006: "fus\xE9eTop"
+    2300008: "partie_d\xE9tachable"
+    2300010: "pied1_fus\xE9eGauche"
+    2300012: "pied1_fus\xE9eGauche.001"
+    2300014: "pied1_fus\xE9eGauche.002"
+    2300016: "pied2_fus\xE9eGauche"
+    2300018: "pied2_fus\xE9eGauche.001"
+    2300020: "pied2_fus\xE9eGauche.002"
+    2300022: "pied3_fus\xE9eGauche"
+    2300024: "pied3_fus\xE9eGauche.001"
+    2300026: "pied3_fus\xE9eGauche.002"
+    2300028: "pied4_fus\xE9eGauche"
+    2300030: "pied4_fus\xE9eGauche.001"
+    2300032: "pied4_fus\xE9eGauche.002"
+    2300034: "piston1_fus\xE9eDroite"
+    2300036: "piston1_fus\xE9eGauche"
+    2300038: "piston1_fus\xE9eMid"
+    2300040: "piston2_fus\xE9eDroite"
+    2300042: "piston2_fus\xE9eGauche"
+    2300044: "piston2_fus\xE9eMid"
+    2300046: "piston3_fus\xE9eDroite"
+    2300048: "piston3_fus\xE9eGauche"
+    2300050: "piston3_fus\xE9eMid"
+    2300052: "piston4_fus\xE9eDroite"
+    2300054: "piston4_fus\xE9eGauche"
+    2300056: "piston4_fus\xE9eMid"
+    3300000: "fus\xE9eDroite"
+    3300002: "fus\xE9eGauche"
+    3300004: "fus\xE9eMid"
+    3300006: "fus\xE9eTop"
+    3300008: "partie_d\xE9tachable"
+    3300010: "pied1_fus\xE9eGauche"
+    3300012: "pied1_fus\xE9eGauche.001"
+    3300014: "pied1_fus\xE9eGauche.002"
+    3300016: "pied2_fus\xE9eGauche"
+    3300018: "pied2_fus\xE9eGauche.001"
+    3300020: "pied2_fus\xE9eGauche.002"
+    3300022: "pied3_fus\xE9eGauche"
+    3300024: "pied3_fus\xE9eGauche.001"
+    3300026: "pied3_fus\xE9eGauche.002"
+    3300028: "pied4_fus\xE9eGauche"
+    3300030: "pied4_fus\xE9eGauche.001"
+    3300032: "pied4_fus\xE9eGauche.002"
+    3300034: "piston1_fus\xE9eDroite"
+    3300036: "piston1_fus\xE9eGauche"
+    3300038: "piston1_fus\xE9eMid"
+    3300040: "piston2_fus\xE9eDroite"
+    3300042: "piston2_fus\xE9eGauche"
+    3300044: "piston2_fus\xE9eMid"
+    3300046: "piston3_fus\xE9eDroite"
+    3300048: "piston3_fus\xE9eGauche"
+    3300050: "piston3_fus\xE9eMid"
+    3300052: "piston4_fus\xE9eDroite"
+    3300054: "piston4_fus\xE9eGauche"
+    3300056: "piston4_fus\xE9eMid"
+    4300000: "pied4_fus\xE9eGauche.002"
+    4300002: "pied3_fus\xE9eGauche.002"
+    4300004: "pied2_fus\xE9eGauche.002"
+    4300006: "pied1_fus\xE9eGauche.002"
+    4300008: "pied1_fus\xE9eGauche.001"
+    4300010: "pied2_fus\xE9eGauche.001"
+    4300012: "pied3_fus\xE9eGauche.001"
+    4300014: "pied4_fus\xE9eGauche.001"
+    4300016: "piston4_fus\xE9eDroite"
+    4300018: "piston3_fus\xE9eDroite"
+    4300020: "piston2_fus\xE9eDroite"
+    4300022: "piston1_fus\xE9eDroite"
+    4300024: "piston1_fus\xE9eMid"
+    4300026: "piston2_fus\xE9eMid"
+    4300028: "piston3_fus\xE9eMid"
+    4300030: "piston4_fus\xE9eMid"
+    4300032: "piston4_fus\xE9eGauche"
+    4300034: "piston3_fus\xE9eGauche"
+    4300036: "piston2_fus\xE9eGauche"
+    4300038: "piston1_fus\xE9eGauche"
+    4300040: "pied4_fus\xE9eGauche"
+    4300042: "pied3_fus\xE9eGauche"
+    4300044: "pied2_fus\xE9eGauche"
+    4300046: "pied1_fus\xE9eGauche"
+    4300048: "fus\xE9eMid"
+    4300050: "fus\xE9eDroite"
+    4300052: "fus\xE9eGauche"
+    4300054: "partie_d\xE9tachable"
+    4300056: "fus\xE9eTop"
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
