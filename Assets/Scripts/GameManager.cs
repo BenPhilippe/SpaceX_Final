@@ -25,9 +25,11 @@ public class GameManager : MonoBehaviour {
 			if(timeValue>0){
 				currentPhase = "Decollage";
 				falcon.PauseWalkers(false);
+
 				if(falcon.bzWalker.NormalizedT > 0.5f){
 					currentPhase = ">0.5f";
 				}
+				
 			}else{
 				currentPhase = "Wait";
 			}

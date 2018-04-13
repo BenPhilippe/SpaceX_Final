@@ -50,7 +50,7 @@ public class TargetFollower : MonoBehaviour {
             Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
             Vector3 position = rotation * negDistance + target.position;
 			if(zooming){
-				Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, position, 1.5f );
+				Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, position, .5f );
 			}
             transform.rotation = rotation;
 

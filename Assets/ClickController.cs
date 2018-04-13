@@ -15,7 +15,7 @@ public class ClickController : MonoBehaviour {
 				if(Physics.Raycast(ray, out hit, 1500f)){
 					ModuleClick mc = hit.collider.gameObject.GetComponent<ModuleClick>();
 					if (mc != null){
-						follower.ChangeTarget(mc.transform);
+						follower.ChangeTarget(mc.transform.parent);
 					}
 				}
 			}

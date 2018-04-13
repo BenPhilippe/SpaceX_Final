@@ -22,9 +22,11 @@ public class SpeedManager : MonoBehaviour {
 		//Get nearest
 		float dist = Vector3.Distance(transform.position, speedTargets[currentSpeedIndex].GetComponent<Transform>().position);
 		foreach(SpeedTarget st in speedTargets){
-			float d2 = Vector3.Distance(transform.position, speedTargets[currentSpeedIndex+1].GetComponent<Transform>().position);
-			if(d2 < dist){
-				currentSpeedIndex++;
+			if(currentSpeedIndex + 1 < speedTargets.Length){
+				float d2 = Vector3.Distance(transform.position, speedTargets[currentSpeedIndex+1].GetComponent<Transform>().position);
+				if(d2 < dist){
+					currentSpeedIndex++;
+				}
 			}
 		}
 		bzWalker.speed = speedTargets[currentSpeedIndex].speed;
@@ -36,7 +38,7 @@ public class SpeedManager : MonoBehaviour {
 	}
 
 	public void SetSpeed(){
-		if(currentSpeedIndex > 0){
+		if(currentSpeedIndex > 0 && speedTargets.Length > 0){
 				lastSpeedTarget = speedTargets[currentSpeedIndex - 1];
 			}else{
 				lastSpeedTarget = speedTargets[0];
