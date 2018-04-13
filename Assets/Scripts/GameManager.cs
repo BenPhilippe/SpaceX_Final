@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 	public bool isPlayMode;
 	public float timeValue, minTimeValue, maxTimeValue, timeMultiplier;
 	public FalconHeavy falcon;
+	public Booster[] boosters;
 	public string currentPhase = "";
 	public float completionPercentage;
 
@@ -16,6 +17,10 @@ public class GameManager : MonoBehaviour {
 		#endif
 		timeValue = minTimeValue;
 		completionPercentage = 0;
+		boosters = falcon.GetComponentsInChildren<Booster>();
+		foreach(Booster b in boosters){
+			Debug.Log("Booster " + b.name);
+		}
 	}
 	void Update()
 	{
@@ -29,7 +34,7 @@ public class GameManager : MonoBehaviour {
 				if(falcon.bzWalker.NormalizedT > 0.5f){
 					currentPhase = ">0.5f";
 				}
-				
+
 			}else{
 				currentPhase = "Wait";
 			}
@@ -55,7 +60,7 @@ public class GameManager : MonoBehaviour {
 
 	public void ChangeTimeSpeed(float value){
 		float f = Snap(value);
-		if(timeMultiplier + f <= 5 && timeMultiplier + f >= -2){
+		if(timeMultiplier + f <= 5 && timeMultiplier + f >= 1){
 			timeMultiplier += f;
 		}
 	}

@@ -53,6 +53,8 @@ public class TargetFollower : MonoBehaviour {
 				Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, position, .5f );
 			}
             transform.rotation = rotation;
+			
+			followSpeed = Vector3.Distance(transform.position, target.position) / 5f;
 
 			transform.position = Vector3.MoveTowards(transform.position, target.position, followSpeed);
 

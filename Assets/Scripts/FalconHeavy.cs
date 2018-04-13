@@ -5,16 +5,20 @@ using BezierSolution;
 
 public class FalconHeavy : MonoBehaviour {
 
-	//public GameObject Payload;
-	//public GameObject secondStage;
-	public GameObject booster_test;
+	public GameObject removeablePart;
+	public GameObject secondStage;
+	public GameObject boosterDroite, boosterGauche;
 	public BezierWalkerWithSpeed bzWalker;
 	public SpeedManager speedManager;
 
 	// Use this for initialization
 	void Start () {
-		booster_test = GetComponentInChildren<Booster>().gameObject;
-		Debug.Log("Booster name : " + booster_test.name);
+		
+		foreach(Collider c in GetComponentsInChildren<Collider>()){
+			if(c != GetComponent<Collider>()){
+				c.enabled = false;
+			}
+		}
 	}
 	void Update()
 	{
@@ -29,9 +33,9 @@ public class FalconHeavy : MonoBehaviour {
 	}
 
 	public void PauseWalkers(bool b){
-		foreach(BezierWalkerWithSpeed w in GetComponentsInChildren<BezierWalkerWithSpeed>()){
+		/*foreach(BezierWalkerWithSpeed w in GetComponentsInChildren<BezierWalkerWithSpeed>()){
 			w.enabled = !b;
-		}
+		}*/
 		foreach(SpeedManager s in GetComponentsInChildren<SpeedManager>()){
 			s.enabled = !b;
 		}
@@ -41,5 +45,17 @@ public class FalconHeavy : MonoBehaviour {
 		}
 		bzWalker.enabled = !b;
 		speedManager.enabled = !b;
+	}
+
+	void OnTriggerEnter(Collider c)
+	{
+		if(c.gameObject.name == "BECO_trigger"){
+			boosterGauche.GetComponent<Booster>().Detach(bzWalker.speed);
+			boosterDroite.GetComponent<Booster>().Detach(bzWalker.speed);
+		}
+		if(c.gameObject.name == "SECO_trigger"){
+			secondStage.GetComponent<Booster>().Detach(bzWalker.speed);
+			removeablePart.SetActive(false);
+		}
 	}
 }

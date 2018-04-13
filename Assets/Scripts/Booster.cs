@@ -24,7 +24,7 @@ public class Booster : MonoBehaviour {
 	}
 	void Update () {
 		EnableParticles(enablePlume);
-		EnableComponents(isAttached);
+		EnableComponents();
 		if(isAttached){
 			nearestPointOnCurve = bzWalker.spline.FindNearestPointTo(transform.position, 100f);
 		}
@@ -34,8 +34,8 @@ public class Booster : MonoBehaviour {
 		}
 	}
 
-	public void EnableComponents(bool b){
-		if(b){
+	public void EnableComponents(){
+		if(isAttached){
 			if(bzWalker.enabled == true || speedM.enabled == true){
 				bzWalker.enabled = false;
 				speedM.enabled = false;
@@ -48,7 +48,7 @@ public class Booster : MonoBehaviour {
 				if(Vector3.Distance(transform.position, nearestPointOnCurve)< distanceTreshold){
 					bzWalker.enabled = true;
 				}else{
-					transform.position = Vector3.MoveTowards(transform.position, nearestPointOnCurve, 25f);
+					transform.position = Vector3.MoveTowards(transform.position, nearestPointOnCurve, bzWalker.speed / 50f);
 				}
 			}
 		}
@@ -63,6 +63,17 @@ public class Booster : MonoBehaviour {
 
 	public void Detach(){
 		bzWalker.speed = transform.parent.GetComponent<BezierWalkerWithSpeed>().speed;
+		foreach(Collider c in GetComponentsInChildren<Collider>()){
+			c.enabled = true;
+		}
+		transform.parent = null;
+		isAttached = false;
+	}
+	public void Detach(float speed){
+		bzWalker.speed = speed;
+		foreach(Collider c in GetComponentsInChildren<Collider>()){
+			c.enabled = true;
+		}
 		transform.parent = null;
 		isAttached = false;
 	}

@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour {
 
 	public GameObject startImage;
 	public Image pauseImage, playImage;
-	public Text timeText, altitudeText;
+	public Text timeText, altitudeText, timeMultiplierText;
 	public Transform cameraTarget;
 
 	Color imageTargetColor = Color.white;
@@ -25,7 +25,8 @@ public class UIManager : MonoBehaviour {
 	void Update()
 	{
 		timeText.text = FormatTime(GM.timeValue);
-		altitudeText.text = (Camera.main.transform.position.y - GM.transform.position.y).ToString("F1") + " m";
+		timeMultiplierText.text = (int)GM.timeMultiplier + "x";
+		altitudeText.text = GM.falcon.bzWalker.speed.ToString("F2");//= (Camera.main.transform.position.y - GM.transform.position.y).ToString("F1") + " m";
 		if(!clickedOnStartImage){
 			ChangeImageColor(startImage.GetComponent<Image>(), imageTargetColor);
 		}else{
@@ -59,6 +60,9 @@ public class UIManager : MonoBehaviour {
 	public void EnableStartImage(bool b){
 		startImage.SetActive(b);
 		clickedOnStartImage = true;
+	}
+	public void ChangeTimeSpeedButton(int i){
+		GM.ChangeTimeSpeed(i);
 	}
 	public void ChangeImageColor(Image i, Color c){
 		i.color = Color.LerpUnclamped(i.color, c, 0.1f);

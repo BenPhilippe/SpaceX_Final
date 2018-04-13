@@ -5,9 +5,11 @@ using BezierSolution;
 
 public class SpeedManager : MonoBehaviour {
 
-	public int currentSpeedIndex = 0;
+	public int currentSpeedIndex = 1;
 	public float acceleration = 0.8f;
-	public SpeedTarget[] speedTargets;
+	public List<SpeedTarget> speedTargets;
+	public float[] speeds;
+	public float speedToAttain;
 	public GameManager GM;
 	public SpeedTarget lastSpeedTarget, nextSpeedTarget;
 	public BezierWalkerWithSpeed bzWalker;
@@ -20,16 +22,17 @@ public class SpeedManager : MonoBehaviour {
 		}
 		bzWalker = GetComponent<BezierWalkerWithSpeed>();
 		//Get nearest
-		float dist = Vector3.Distance(transform.position, speedTargets[currentSpeedIndex].GetComponent<Transform>().position);
+		/*float dist = Vector3.Distance(transform.position, speedTargets[currentSpeedIndex].GetComponent<Transform>().position);
 		foreach(SpeedTarget st in speedTargets){
-			if(currentSpeedIndex + 1 < speedTargets.Length){
+			if(currentSpeedIndex + 1 < speedTargets.Count){
 				float d2 = Vector3.Distance(transform.position, speedTargets[currentSpeedIndex+1].GetComponent<Transform>().position);
 				if(d2 < dist){
 					currentSpeedIndex++;
 				}
 			}
-		}
-		bzWalker.speed = speedTargets[currentSpeedIndex].speed;
+		}*/
+		bzWalker.speed = speeds[0];
+		speedToAttain = speeds[currentSpeedIndex];
 	}
 	
 	// Update is called once per frame
@@ -38,36 +41,32 @@ public class SpeedManager : MonoBehaviour {
 	}
 
 	public void SetSpeed(){
-		if(currentSpeedIndex > 0 && speedTargets.Length > 0){
-				lastSpeedTarget = speedTargets[currentSpeedIndex - 1];
-			}else{
-				lastSpeedTarget = speedTargets[0];
-			}
-			if(currentSpeedIndex < speedTargets.Length - 1){
-				nextSpeedTarget = speedTargets[currentSpeedIndex + 1];
-			}else{
-				nextSpeedTarget = speedTargets[speedTargets.Length - 1];
-			}
-			if(GM.timeValue>0){
-				bzWalker.speed = Mathf.MoveTowards(bzWalker.speed,
-					speedTargets[currentSpeedIndex].speed,
+
+		if(GM.timeValue>0){
+			speedToAttain = speeds[currentSpeedIndex];
+			bzWalker.speed = Mathf.MoveTowards(bzWalker.speed,
+					speedToAttain * GM.timeMultiplier,//nextSpeedTarget.speed,
 					acceleration);
 
-			}else{
-				bzWalker.speed = speedTargets[0].speed;
-			}
+		}else{
+			bzWalker.speed = speeds[0];
+		}
 	}
 
 	void OnTriggerEnter(Collider c){
-		if(c.GetComponent<SpeedTarget>() != null){
+		SpeedTarget tmp = c.GetComponent<SpeedTarget>();
+		if(tmp != null && GM.timeValue>0){
+			Debug.Log("Changing speed target");
 			if(bzWalker.isGoingForward){
-				currentSpeedIndex ++;
-				if(currentSpeedIndex>speedTargets.Length-1)
-					currentSpeedIndex --;
+				currentSpeedIndex+=1;
+				if(currentSpeedIndex>speeds.Length-1){
+					currentSpeedIndex-=1;
+				}
 			}else{
-				currentSpeedIndex --;
-				if(currentSpeedIndex<0)
-					currentSpeedIndex ++;
+				currentSpeedIndex-=1;
+				if(currentSpeedIndex<0){
+					currentSpeedIndex+=1;
+				}
 			}
 		}
 	}
